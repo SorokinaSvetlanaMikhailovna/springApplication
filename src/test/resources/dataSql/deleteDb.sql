@@ -1,0 +1,15 @@
+set constraints all deferred;
+drop table doctor_specialization;
+drop table user_roles;
+drop table appointment_to_doctor;
+drop table medical_card;
+drop table place_of_work;
+drop table working_day;
+drop table vacation;
+drop table doctor;
+drop table clinic;
+drop table patient;
+drop table specialization;
+drop table users;
+drop table roles;
+set constraints all immediate;

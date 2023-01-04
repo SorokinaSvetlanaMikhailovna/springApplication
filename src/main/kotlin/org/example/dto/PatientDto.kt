@@ -1,11 +1,11 @@
 package org.example.dto
 
-import java.time.OffsetDateTime
+import java.time.LocalDate
 
 data class PatientDto(
     val id: Long? = null,
     val firstName: String,
     val lastName: String,
     val gender: Boolean,
-    val birthDate: OffsetDateTime
+    val birthDate: LocalDate
 )

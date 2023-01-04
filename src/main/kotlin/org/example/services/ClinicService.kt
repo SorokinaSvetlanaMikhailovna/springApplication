@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service
 @Service
 class ClinicService(val clinicDao: ClinicDao) {
     fun findAllClinic(): List<ClinicDto> {
-        return clinicDao.findAllClinic()
+        return clinicDao.findAllClinics()
             .map { ClinicDto(it.id, it.name, it.address) }
     }
 

@@ -2,15 +2,13 @@ package org.example.dao
 
 import org.example.entity.Clinic
 import org.example.entity.Doctor
-import org.example.entity.PlaceOfWork
-import org.springframework.stereotype.Component
 import org.springframework.stereotype.Repository
 import javax.persistence.EntityManager
 import javax.transaction.Transactional
 
 @Repository
 class ClinicDao(private val entityManager: EntityManager) {
-    fun findAllClinic(): List<Clinic> {
+    fun findAllClinics(): List<Clinic> {
         return entityManager.createQuery("from Clinic").resultList as List<Clinic>
     }
 

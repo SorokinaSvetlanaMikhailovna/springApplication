@@ -4,7 +4,7 @@ import java.time.OffsetDateTime
 import javax.persistence.*
 
 @Entity
-class Vacation(
+data class Vacation(
     @Column(name = "start_time", nullable = false)
     val startTime: OffsetDateTime,
     @Column(name = "end_time", nullable = false)

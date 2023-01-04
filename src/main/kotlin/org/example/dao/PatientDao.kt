@@ -57,9 +57,4 @@ val g:String = " "
         return emptyList()
 
     }
-    /*  val specializationDoctorId: Long,
-    val clinicId:Long,
-    val startTime:OffsetDateTime,
-    val endTime: OffsetDateTime*/
-
 }

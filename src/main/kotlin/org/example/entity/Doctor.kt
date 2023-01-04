@@ -1,10 +1,10 @@
 package org.example.entity
 
-import java.time.OffsetDateTime
+import java.time.LocalDate
 import javax.persistence.*
 
 @Entity
-class Doctor(
+data class Doctor(
     @Column(nullable = false, name = "first_name")
     val firstName: String,
 
@@ -15,7 +15,7 @@ class Doctor(
     val gender: Boolean,
 
     @Column(nullable = false, name = "birth_date")
-    val birthDate: OffsetDateTime,
+    val birthDate: LocalDate,
     @ManyToMany
     @JoinTable(
         name = "doctor_specialization", joinColumns = [JoinColumn(name = "doctor_id", referencedColumnName = "id")],

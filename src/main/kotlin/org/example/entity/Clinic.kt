@@ -3,7 +3,7 @@ package org.example.entity
 import javax.persistence.*
 
 @Entity
-class Clinic(
+data class Clinic(
     @Column(nullable = false)
     val name: String,
     @Column(nullable = false)

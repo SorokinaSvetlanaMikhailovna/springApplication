@@ -1,9 +1,8 @@
 package org.example.dto
 
-import java.time.OffsetDateTime
+import java.time.LocalDate
 
-class MedicalCardDto(val recordDate: OffsetDateTime,
+class MedicalCardDto(val recordDate: LocalDate,
                      val doctorId:Long,
                      val patientId : Long,
-                     val record:String) {
-}
+                     val record:String)

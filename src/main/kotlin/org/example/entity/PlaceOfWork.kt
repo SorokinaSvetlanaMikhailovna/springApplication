@@ -5,7 +5,7 @@ import javax.persistence.*
 
 @Entity
 @Table(name = "place_of_work")
-class PlaceOfWork(
+data class PlaceOfWork(
     @Column(name = "date_of_start_work", nullable = false)
     val dateOfStartWork: OffsetDateTime,
     @ManyToOne

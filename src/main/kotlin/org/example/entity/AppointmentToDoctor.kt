@@ -6,7 +6,7 @@ import javax.persistence.*
 
 @Entity
 @Table(name = "appointment_to_doctor")
-class AppointmentToDoctor(
+data class AppointmentToDoctor(
     @Column(name = "start_time", nullable = false)
     val startTime: OffsetDateTime,
     @ManyToOne

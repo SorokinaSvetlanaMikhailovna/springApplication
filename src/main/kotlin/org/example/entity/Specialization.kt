@@ -6,9 +6,8 @@ import javax.persistence.GenerationType
 import javax.persistence.Id
 
 @Entity
-class Specialization(
-    val specialization:String,
-    val doctorId: Long?=null
+data class Specialization(
+    val specialization: String
 ) {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

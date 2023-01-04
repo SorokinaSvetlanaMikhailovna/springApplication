@@ -1,6 +1,6 @@
 package org.example.entity
 
-import java.time.OffsetDateTime
+import java.time.LocalDate
 import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
@@ -12,9 +12,9 @@ import javax.persistence.Table
 
 @Entity
 @Table(name = "medical_card")
-class MedicalCard(
+data class MedicalCard(
     @Column(name = "record_date", nullable = false)
-    val recordDate: OffsetDateTime,
+    val recordDate: LocalDate,
     @ManyToOne
     @JoinColumn(name = "doctor_id", nullable = false)
     val doctor: Doctor,

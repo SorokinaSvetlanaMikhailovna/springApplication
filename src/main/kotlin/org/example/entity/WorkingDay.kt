@@ -5,7 +5,7 @@ import javax.persistence.*
 
 @Entity
 @Table(name = "working_day")
-class WorkingDay(
+data class WorkingDay(
     @Column(name = "start_time", nullable = false)
     val startTime: OffsetDateTime,
 

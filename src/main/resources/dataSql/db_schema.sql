@@ -72,7 +72,8 @@ create table appointment_to_doctor (
 create table doctor_specialization(
     id bigserial primary key,
     doctor_id bigint references doctor(id) not null,
-    specialization_id bigint references specialization(id);
+    specialization_id bigint references specialization(id),
+    unique(doctor_id,specialization_id)
     );
 
 create table users (

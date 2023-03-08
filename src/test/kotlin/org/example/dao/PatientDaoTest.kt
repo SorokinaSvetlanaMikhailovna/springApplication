@@ -1,6 +1,7 @@
 package org.example.dao
 
 import org.example.entity.*
+import org.example.model.FreeDoctorRequest
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
@@ -151,9 +152,53 @@ class PatientDaoTest : DBDockerInit() {
         Assertions.assertEquals(
             AppointmentStatus.CANCELLED,
             entityManager.createQuery("select ap.status from AppointmentToDoctor ap where ap.doctor.firstName = :firstNameDoctor")
-                .setParameter("firstNameDoctor", doctor.firstName).singleResult as AppointmentStatus)
+                .setParameter("firstNameDoctor", doctor.firstName).singleResult as AppointmentStatus
+        )
     }
 
     fun getFreeDoctorTest() {
+
+        val doctor = Doctor(
+            "Мария",
+            "Герасимова",
+            true,
+            LocalDate.of(1993, 11, 3)
+        )
+        val doctor1 = Doctor(
+            "Александр",
+            "Пушкин",
+            false,
+            LocalDate.of(1988, 2, 5)
+        )
+        val doctor2 = Doctor(
+            "Ганс",
+            "Андерсен",
+            false,
+            LocalDate.of(1994, 9, 8)
+        )
+        val doctor3 = Doctor(
+            "Aркадий",
+            "Петрович",
+            false,
+            LocalDate.of(1994, 9, 8)
+        )
+        val specialization = Specialization("ВРАЧ-АЛЛЕРГОЛОГ")
+        val specialization1 = Specialization("ВРАЧ-АНЕСТЕЗИОЛОГ-РЕАНИМАТОЛОГ")
+        val clinic = Clinic("Академия здоровья", "Академика Курчатова, улица")
+        val clinic1 = Clinic("Док+", "Крюковский тупик")
+        val clinic2 = Clinic("Веселый медик", "Курьяновский 2-й, проезд")
+        val workingDay = WorkingDay(
+            OffsetDateTime.of(2022, 12, 23, 8, 0, 0, 0, ZoneOffset.UTC),
+            OffsetDateTime.of(2022, 12, 23, 19, 30, 0, 0, ZoneOffset.UTC),
+            doctor, clinic
+        )
+
+        val startTimePatient = OffsetDateTime.of(2022, 12, 23, 13, 30, 0, 0, ZoneOffset.UTC)
+        val endTimePatient = OffsetDateTime.of(2022, 12, 23, 13, 30, 0, 0, ZoneOffset.UTC)
+        val clinicPatient = 1 as Long
+        val specializationPatient = 1 as Long
+        val freeDoctorRequest =
+            FreeDoctorRequest(specializationPatient, clinicPatient, startTimePatient, endTimePatient)
+
     }
 }

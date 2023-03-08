@@ -23,12 +23,12 @@ class ClinicDao(private val entityManager: EntityManager) {
 
     @Transactional
     fun deleteClinic(clinicId: Long) {
-        val clinic: Clinic = findClinicById(clinicId);
+        val clinic: Clinic = findClinicById(clinicId)
         entityManager.remove(clinic)
     }
 
     fun findDoctorsByClinicId(clinicId: Long): List<Doctor> {
-      return  entityManager.createQuery("select pow.doctor from PlaceOfWork pow where pow.clinic.id = :id")
+        return entityManager.createQuery("select pow.doctor from PlaceOfWork pow where pow.clinic.id = :id")
             .setParameter("id", clinicId).resultList as List<Doctor>
     }
 
